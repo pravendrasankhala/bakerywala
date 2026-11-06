@@ -1,0 +1,68 @@
+// src/data/categories.ts
+import { Category } from '@/types';
+
+export const categories: Category[] = [
+  {
+    id: 'cakes',
+    name: 'Cakes',
+    icon: '🎂',
+    description: 'Celebration & everyday cakes',
+    productCount: 24,
+    color: '#F5E6D3',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=80',
+  },
+  {
+    id: 'pastries',
+    name: 'Pastries',
+    icon: '🥐',
+    description: 'Croissants, macarons & more',
+    productCount: 18,
+    color: '#FEF3C7',
+    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&q=80',
+  },
+  {
+    id: 'breads',
+    name: 'Breads',
+    icon: '🍞',
+    description: 'Artisan & daily breads',
+    productCount: 12,
+    color: '#FDE8D0',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80',
+  },
+  {
+    id: 'cookies',
+    name: 'Cookies',
+    icon: '🍪',
+    description: 'Handcrafted crispy bites',
+    productCount: 15,
+    color: '#FEF9C3',
+    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&q=80',
+  },
+  {
+    id: 'brownies',
+    name: 'Brownies',
+    icon: '🍫',
+    description: 'Fudgy chocolate squares',
+    productCount: 8,
+    color: '#FDE8D0',
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&q=80',
+  },
+  {
+    id: 'desserts',
+    name: 'Desserts',
+    icon: '🍮',
+    description: 'Entremets, mousses & more',
+    productCount: 10,
+    color: '#F3E8FF',
+    image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?w=400&q=80',
+  },
+  {
+    id: 'gift-hampers',
+    name: 'Gift Hampers',
+    icon: '🎁',
+    description: 'Curated gifting baskets',
+    productCount: 6,
+    color: '#DCFCE7',
+    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&q=80',
+  },
+];

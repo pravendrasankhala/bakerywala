@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Color Palette */
+  --color-cream: #FDFAF5;
+  --color-cream-dark: #F5EDD8;
+  --color-brown: #7C4A2D;
+  --color-brown-light: #A0623D;
+  --color-brown-dark: #5A3520;
+  --color-espresso: #3B1F0F;
+  --color-gold: #D4A853;
+  --color-gold-light: #E8C97A;
+  --color-taupe: #C8B8A2;
+  --color-rose: #F5E6D3;
+  --color-text: #2C1810;
+  --color-text-light: #6B4C3B;
+
+  /* Font Families */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Animations */
+  --animate-fade-up: fadeUp 0.6s ease forwards;
+  --animate-fade-in: fadeIn 0.5s ease forwards;
+  --animate-slide-right: slideRight 0.4s ease forwards;
+  --animate-slide-left: slideLeft 0.4s ease forwards;
+  --animate-bounce-soft: bounceSoft 2s ease-in-out infinite;
+
+  /* Keyframes */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bounceSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes countDown {
+    from { width: 100%; }
+    to { width: 0%; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+  }
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212, 168, 83, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(212, 168, 83, 0); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-width: 320px;
+  background-color: #FDFAF5;
+  color: #2C1810;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+    line-height: 1.15;
+  }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FDFAF5; }
+::-webkit-scrollbar-thumb { background: #C8B8A2; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #7C4A2D; }
+
+::selection { background: #D4A853; color: #fff; }
+
+.animate-fade-up { animation: fadeUp 0.6s ease forwards; }
+.animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+.animate-slide-right { animation: slideRight 0.5s ease forwards; }
+.animate-slide-left { animation: slideLeft 0.5s ease forwards; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-bounce-soft { animation: bounceSoft 2s ease-in-out infinite; }
+.animate-pulse-gold { animation: pulse-gold 2s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+.glass {
+  background: rgba(253, 250, 245, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #7C4A2D, #D4A853);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f5edd8 25%, #fdfaf5 50%, #f5edd8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 4px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #C8B8A2; border-radius: 2px; }
+
+.transition-base { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.product-card:hover .product-actions { opacity: 1; transform: translateY(0); }
+.product-actions { transition: all 0.3s ease; }
+
+.nav-scrolled {
+  background: rgba(253, 250, 245, 0.95) !important;
+  box-shadow: 0 2px 20px rgba(60, 31, 15, 0.08);
+}
+
+.star-filled { color: #D4A853; }
+.star-empty { color: #E8D5B7; }
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
